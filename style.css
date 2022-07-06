@@ -25,7 +25,7 @@ body{
   /*Assim o objeto será centralizado*/
   
   left:calc(50% - (15em / 2));
-  top:25vh;
+  top:calc( 50% - (15em / 2));
   width:15em;
   height:15em;
   display:flex;
@@ -54,10 +54,7 @@ body{
   background:none;
   border-radius:1em;
 }
-.x,.circle{
-  animation:marcar 0.5s !important;
-  background-size:cover !important;
-}
+
 .x{
   background-image:url('https://www.svgimages.com/svg-image/s5/x-icon-256x256.png')!important;
 }
@@ -81,25 +78,31 @@ body{
 .sectionMain button:action{
   background-color:white;
 }
+.marcado{
+  animation:marcar 0.5s !important;
+  background-size:cover !important;
+}
+
+
 @keyframes marcar {
   from{
-    weight:50%;
     height:50%;
   }
   to{
-    weight:100%;
-    height:100%;
+    height:85%;
   }
 }
 
 /*Modal style*/
 
 .modal {
-  position:relative;
+  position:absolute;
   left:calc(50% - (50vw / 2));
+  top:35vh;
   background-color:white;
   text-align:center;
   width:50vw;
+  height:15vh;
   padding:2em 0;
   border-radius:0.5em;
   box-shadow:0.2em 0.2em 1em 0;
@@ -113,6 +116,7 @@ body{
   animation: hide 1s;
   display:block;
   animation-fill-mode :forwards;
+  pointer-events: none;
 }
 @keyframes show {
   from{
@@ -122,18 +126,17 @@ body{
   to{
     opacity:1;
     transform:translate(0, 0);
+    display:none;
   }
 }
 @keyframes hide {
   from{
     opacity:1;
     transform: translate(0px, 0px);
-    display:block;
   }
   to{
     opacity:0;
     transform:translate(0, -150px);
-    display:none;
   }
 }
 

@@ -21,8 +21,8 @@ function hideModal (){
 }
 function resetar(){
     vencedor = false;
-    modal.classList.remove("modalVisivel");
     hideModal();
+    modal.classList.remove("modalVisivel");
     titulo.innerText = "Clique para começar";
     for(let c = 0; c < arrayMarcados.length ; c++){
       if(arrayMarcados [c] !== undefined){
@@ -34,7 +34,7 @@ function resetar(){
             botoes[c].classList.remove('circle');
             break;
         }
-        
+        botoes[c].classList.remove('marcado');
       }
     } 
     arrayMarcados = [];
@@ -131,8 +131,7 @@ function marcar(campo,posicao){
              campo.classList.add('circle');
           break;
       }
-      campo.style.animation="marcar 0.5s";
-      campo.style.backgroundSize = "cover";
+      campo.classList.add('marcado');
       
       verificar();
       trocaJogador();
