@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:linear-gradient(#4d4dff 40%, #6600cc) no-repeat;
+  font-family: 'Roboto', sans-serif;
+  height:100vh;
+  width:100vw;
+}
+
+.title{
+  padding-top:1em;
+  text-align:center;
+}
+.sectionMain {
+  position:absolute;
+  
+  /*Movendo objeto a direita para 50% da página*/
+  /*Subtraindo pela metade da sua própria largura */
+  /*Assim o objeto será centralizado*/
+  
+  left:calc(50% - (15em / 2));
+  top:25vh;
+  width:15em;
+  height:15em;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-sizing:border-box;
+}
+.table tr {
+  display:flex;
+  justify-content:space-between;
+}
+
+.table tr:nth-child(2){
+  border-top:0.4em solid black;
+  border-bottom:0.4em solid black;
+}
+.table tr td:nth-child(2){
+  border-left:0.4em solid black;
+  border-right:0.4em solid black;
+}
+.sectionMain button {
+  width:5.75em;
+  height:5.75em;
+  margin:0.1em;
+  border:none;
+  background:none;
+  border-radius:1em;
+}
+.x,.circle{
+  animation:marcar 0.5s !important;
+  background-size:cover !important;
+}
+.x{
+  background-image:url('https://www.svgimages.com/svg-image/s5/x-icon-256x256.png')!important;
+}
+.circle{
+  background-image:url('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/46278/white-circle-emoji-clipart-md.png')!important;
+  
+}
+.sectionMain button:hover{
+  cursor:pointer;
+  background-color:white;
+  animation: opacity 1s;
+}
+@keyframes opacity {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+.sectionMain button:action{
+  background-color:white;
+}
+@keyframes marcar {
+  from{
+    weight:50%;
+    height:50%;
+  }
+  to{
+    weight:100%;
+    height:100%:
+  }
+}
+
+/*Modal style*/
+
+.modal {
+  position:relative;
+  left:calc(50% - (50vw / 2));
+  background-color:white;
+  text-align:center;
+  width:50vw;
+  padding:2em 0;
+  border-radius:0.5em;
+  box-shadow:0.2em 0.2em 1em 0;
+  display:none;
+}
+.modalVisivel {
+  animation : show 1s;
+  display: block;
+}
+.modalHide{
+  animation: hide 1s;
+  display:block;
+  animation-fill-mode :forwards;
+}
+@keyframes show {
+  from{
+    opacity:0;
+    transform: translate(0px, -60px);
+  }
+  to{
+    opacity:1;
+    transform:translate(0, 0);
+  }
+}
+@keyframes hide {
+  from{
+    opacity:1;
+    transform: translate(0px, 0px);
+    display:block;
+  }
+  to{
+    opacity:0;
+    transform:translate(0, -150px);
+    display:none;
+  }
+}
+
+.textVencedor {
+  margin-bottom:1em;
+}
+.buttonAgain {
+  border:none;
+  background:#3333ff;
+  color:white;
+  font-size:1em;
+  padding:0.5em;
+  border-radius:0.5em;
+}
+
+.buttonAgain:hover{
+  cursor:pointer;
+  font-weight:750;
+}
+
+.buttonClose{
+  position:absolute;
+  top:0;
+  right:0;
+  margin:1em 0.7em 0 0;
+  background:none;
+  border:none;
+}
+.buttonClose:hover{
+  cursor:pointer;
+}
