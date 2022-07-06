@@ -14,6 +14,7 @@ body{
 }
 
 .title{
+  letter-spacing: 0.2ch;
   padding-top:1em;
   text-align:center;
 }
