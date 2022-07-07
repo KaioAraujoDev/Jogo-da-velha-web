@@ -1,8 +1,10 @@
 
 //Declarações de referências
 
-const botoes = document.querySelectorAll('.sectionMain button');
-const titulo = document.querySelector('.title');
+const botoes =  document.querySelectorAll('.sectionMain button');
+const titulo =  document.querySelector('h1.title');
+const divturno = document.querySelector('.divTurno');
+const turno = document.querySelector('.divTurno h2')
 
 const modal  = document.querySelector('.modal');
 const botaoFechar = document.querySelector('.buttonClose');
@@ -23,7 +25,8 @@ function resetar(){
     vencedor = false;
     hideModal();
     modal.classList.remove("modalVisivel");
-    titulo.innerText = "Clique para começar";
+    divturno.classList.add("hide-title");
+    titulo.classList.remove("hide-title");
     for(let c = 0; c < arrayMarcados.length ; c++){
       if(arrayMarcados [c] !== undefined){
         switch(arrayMarcados[c]){
@@ -42,11 +45,13 @@ function resetar(){
 //Passar rodada , a cada marco com a opção será trocado de jogador
 
 function trocaJogador(){
+  titulo.classList.add('hide-title')
+  divturno.classList.remove('hide-title')
    vezPrincipal = !vezPrincipal;
     if(vezPrincipal){
-      titulo.innerText = "Jogador 1";
+      turno.innerText = "Jogador 1";
     }else{
-      titulo.innerText = "Jogador 2";
+      turno.innerText = "Jogador 2";
     }
     
 }
