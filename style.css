@@ -12,7 +12,12 @@ body{
   height:100vh;
   width:100vw;
 }
-
+.divTurno{
+  text-align:center;
+}
+.hide-title{
+  display:none;
+}
 .title{
   letter-spacing: 0.2ch;
   padding-top:1em;
@@ -98,16 +103,21 @@ body{
 
 .modal {
   position:absolute;
-  left:calc(50% - (50vw / 2));
+  left:calc(50% - 15vw - 2.5em);
   top:35vh;
   background-color:white;
   text-align:center;
-  width:50vw;
+  width:30vw;
   height:15vh;
-  padding:2em 0;
+  padding:2.5em;
   border-radius:0.5em;
   box-shadow:0.2em 0.2em 1em 0;
   display:none;
+}
+.modalDivMain{
+  display:flex;
+  align-items:center;
+  flex-direction:column;
 }
 .modalVisivel {
   animation : show 1s;
