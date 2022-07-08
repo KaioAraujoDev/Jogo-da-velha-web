@@ -11,6 +11,10 @@ body{
   font-family: 'Roboto', sans-serif;
   height:100vh;
   width:100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .divTurno{
   text-align:center;
@@ -22,16 +26,10 @@ body{
   letter-spacing: 0.2ch;
   padding-top:1em;
   text-align:center;
+  position:absolute;
+  top:0;
 }
 .sectionMain {
-  position:absolute;
-  
-  /*Movendo objeto a direita para 50% da página*/
-  /*Subtraindo pela metade da sua própria largura */
-  /*Assim o objeto será centralizado*/
-  
-  left:calc(50% - (15em / 2));
-  top:calc( 50% - (15em / 2));
   width:15em;
   height:15em;
   display:flex;
@@ -62,10 +60,10 @@ body{
 }
 
 .x{
-  background-image:url('https://www.svgimages.com/svg-image/s5/x-icon-256x256.png')!important;
+  background-image:url(assets/x-icon.png)!important;
 }
 .circle{
-  background-image:url('https://creazilla-store.fra1.digitaloceanspaces.com/emojis/46278/white-circle-emoji-clipart-md.png')!important;
+  background-image:url(assets/O-icon.png)!important;
   
 }
 .sectionMain button:hover{
@@ -102,22 +100,23 @@ body{
 /*Modal style*/
 
 .modal {
-  position:absolute;
-  left:calc(50% - 15vw - 2.5em);
-  top:35vh;
+  position: absolute;
   background-color:white;
   text-align:center;
   width:30vw;
   height:15vh;
-  padding:2.5em;
+  padding:1em;
   border-radius:0.5em;
   box-shadow:0.2em 0.2em 1em 0;
   display:none;
+
 }
 .modalDivMain{
   display:flex;
   align-items:center;
+  justify-content:center;
   flex-direction:column;
+  height: 100%;
 }
 .modalVisivel {
   animation : show 1s;
